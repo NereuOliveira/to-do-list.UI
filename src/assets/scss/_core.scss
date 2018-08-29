@@ -1,0 +1,51 @@
+html, body {
+    background-color: $todo-white-ter;
+}
+
+#alternative--layout {
+    padding: 200px 50px;
+}
+
+#todo--layout {
+    margin-top: 70px;
+    overflow: hidden;
+
+    .todo--layout-main {
+        padding: 0;
+        margin-top: -0.5rem;
+        margin-right: -0.5rem;
+        margin-bottom: -0.5rem;
+    
+        .todo--layout-content {
+            min-height: 350px;
+            background-color: $todo-white-ter;
+            border-left: 1px solid $todo-gray-light;
+        }
+    }
+}
+
+.todo-loading {
+    display: inline-block;
+    margin-top: 300px;
+    width: $todo-loading-size;
+    height: $todo-loading-size;
+
+    &:after {
+        content: " ";
+        display: block;
+        width: $todo-loading-size;
+        height: $todo-loading-size;
+        border-radius: 50%;
+        border: 5px solid $todo-primary;
+        border-color: $todo-primary transparent $todo-primary transparent;
+        animation: todo-loading 1.2s linear infinite;
+    }
+}
+@keyframes todo-loading {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

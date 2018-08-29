@@ -1,0 +1,65 @@
+ul.todo--list {
+    li {
+        padding: 0.6rem;
+        border-bottom: 1px solid $todo-gray-light;
+
+        .todo--list-checkbox {
+            margin: 5px;
+            outline: none;
+            display: inline-flex;
+            align-items: center;
+            cursor: pointer;
+            input[type=checkbox] {
+                position: absolute;
+                left: 0;
+                opacity: 0;
+                outline: none;
+                z-index: -1;
+                + .check {
+                    width: 1.5em;
+                    height: 1.5em;
+                    flex-shrink: 0;
+                    border-radius: 50%;
+                    border: 2px solid #7a7a7a;
+                    transition: background .15s ease-out;
+                }
+                &:checked + .check {
+                    background: $todo-primary url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3Cpath d='M.04.627L.146.52.43.804.323.91zm.177.177L.854.167.96.273.323.91z' fill='%23fff'/%3E%3C/svg%3E") no-repeat 50%;
+                    border-color: $todo-primary;
+                }
+            }
+            &:hover {
+                input[type=checkbox] + .check {
+                    border-color: $todo-primary;
+                }
+            }
+        }
+
+        input[type="text"] {
+            margin-left: 10px;
+            background: transparent;
+            border: none;
+            outline: none;
+            -webkit-appearance: none;
+            align-items: center;
+            box-shadow: none;
+            display: inline-flex;
+            font-size: 1rem;
+            height: 2.25em;
+            justify-content: flex-start;
+            line-height: 1.5;
+            padding-bottom: calc(.375em - 1px);
+            padding-left: calc(.625em - 1px);
+            padding-right: calc(.625em - 1px);
+            padding-top: calc(.375em - 1px);
+            position: relative;
+            vertical-align: top;
+            width: 90%;
+
+            &.checked {
+                text-decoration: line-through;
+                color: $todo-gray-light;
+            }
+        }
+    }
+}
