@@ -16,7 +16,7 @@ Run the server:
 ```
 npm start
 ```
-It will open http://localhost:3000/
+It will open http://localhost:8080/
 
 ### Back End
 
